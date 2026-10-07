@@ -1,5 +1,7 @@
 # 萤石摄像头-开放平台（hass_camera_ezviz）
 
+[![通过 HACS 添加此仓库](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=xyzmos&repository=hass_camera_ezviz&category=integration)
+
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
 [![GitHub Release](https://img.shields.io/github/v/release/xyzmos/hass_camera_ezviz)](https://github.com/xyzmos/hass_camera_ezviz/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -33,6 +35,10 @@
 ## 安装
 
 ### 方式一：HACS（推荐）
+
+**一键添加**：点击 [![通过 HACS 添加此仓库](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=xyzmos&repository=hass_camera_ezviz&category=integration) 会自动跳转到你的 Home Assistant 并把本仓库添加为 HACS 自定义仓库，然后在 HACS 中搜索下载即可。
+
+**手动添加**：
 
 1. 打开 HACS → 右上角菜单 → **自定义存储库**
 2. 添加仓库：`https://github.com/xyzmos/hass_camera_ezviz`，类别选择 **Integration**
