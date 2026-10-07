@@ -4,13 +4,10 @@
     "step": {
       "user": {
         "title": "EZVIZ Camera",
-        "description": "Enter the appKey / appSecret of your application created on the EZVIZ Open Platform: {open_url}",
+        "description": "Enter the appKey / appSecret of the application you created in the EZVIZ Open Platform (open.ys7.com) console under Application Management.",
         "data": {
           "appkey": "appKey",
           "appsecret": "appSecret"
-        },
-        "description_placeholders": {
-          "open_url": "https://open.ys7.com/console/application.html"
         }
       },
       "reauth_confirm": {
