@@ -251,9 +251,10 @@ class EzvizOptionsFlow(OptionsFlowWithReload):
         }
         if webhook_url:
             schema_dict[
-                vol.Optional(CONF_WEBHOOK_URL, description={"suggested_value": webhook_url})
-            ] = TextSelector(
-                TextSelectorConfig(type=TextSelectorType.TEXT, readonly=True)
-            )
+                vol.Optional(
+                    CONF_WEBHOOK_URL,
+                    description={"suggested_value": webhook_url},
+                )
+            ] = TextSelector(TextSelectorConfig(type=TextSelectorType.TEXT))
 
         return self.async_show_form(step_id="init", data_schema=vol.Schema(schema_dict))

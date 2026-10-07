@@ -238,7 +238,10 @@ class EzvizDataUpdateCoordinator(DataUpdateCoordinator[dict[str, Any]]):
         resp = await self._async_call(API_DEVICE_INFO, {"deviceSerial": serial})
         self._data[serial] = resp.get("data") or {}
 
-        if "on_off" in self.enabled_switches:
+        capacity = self._data["capacity"].get(serial) or {}
+        support_privacy = capacity.get("support_privacy") == "1"
+
+        if "on_off" in self.enabled_switches and support_privacy:
             try:
                 resp = await self._async_call(
                     API_SCENE_SWITCH_STATUS, {"deviceSerial": serial}
