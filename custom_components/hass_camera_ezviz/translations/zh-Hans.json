@@ -4,10 +4,13 @@
     "step": {
       "user": {
         "title": "萤石云摄像头",
-        "description": "填写在[萤石开放平台](https://open.ys7.com/console/application.html)创建应用后获得的 appKey / appSecret。",
+        "description": "填写在萤石开放平台 {open_url} 创建应用后获得的 appKey / appSecret。",
         "data": {
           "appkey": "appKey",
           "appsecret": "appSecret"
+        },
+        "description_placeholders": {
+          "open_url": "https://open.ys7.com/console/application.html"
         }
       },
       "reauth_confirm": {
