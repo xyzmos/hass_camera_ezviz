@@ -47,8 +47,9 @@ API_TIMEOUT = 10
 TOKEN_REFRESH_MARGIN_MS = 10 * 60 * 1000
 PAGE_SIZE = 50
 
-# Ezviz API code -> setup 错误分类
-AUTH_ERROR_CODES = {"10001", "10002", "10004", "10005", "10017", "10030", "49999"}
+# Ezviz API 错误码 -> 认证类错误（appKey/appSecret 或账号问题，触发 reauth）
+# 注意：49999(数据异常)/10002(token过期) 为瞬时或服务端错误，应重试而非 reauth
+AUTH_ERROR_CODES = {"10004", "10005", "10017", "10030"}
 
 EVENT_WEBHOOK = f"{DOMAIN}_webhook_event"
 EVENT_INTELLIGENCE = f"{DOMAIN}_intelligence_event"

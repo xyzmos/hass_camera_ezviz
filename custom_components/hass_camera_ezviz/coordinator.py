@@ -48,10 +48,18 @@ _LOGGER = logging.getLogger(__name__)
 class EzvizApiError(Exception):
     """Raised when the EZVIZ open API returns a non-200 code."""
 
-    def __init__(self, code: str | int | None, message: str | None = None) -> None:
-        super().__init__(f"EZVIZ API error code={code} msg={message}")
+    def __init__(
+        self,
+        code: str | int | None,
+        message: str | None = None,
+        endpoint: str | None = None,
+    ) -> None:
+        super().__init__(
+            f"EZVIZ API error code={code} msg={message} endpoint={endpoint}"
+        )
         self.code = str(code)
         self.message = message
+        self.endpoint = endpoint
 
 
 def _is_auth_error(err: Exception) -> bool:

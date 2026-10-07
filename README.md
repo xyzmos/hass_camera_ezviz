@@ -29,7 +29,7 @@
 2. 在[萤石开放平台](https://open.ys7.com)注册开发者账号，进入[控制台 - 应用管理](https://open.ys7.com/console/application.html)**创建应用**，获得：
    - `appKey`
    - `appSecret`
-3. Home Assistant **2025.1.0** 或更高版本。
+3. Home Assistant **2025.9.0** 或更高版本。
 4. （可选，Webhook 推送）Home Assistant 可被萤石云从公网访问（配置了外部访问 URL，如域名/NABU CASA 等）。
 
 ## 安装

@@ -11,7 +11,7 @@ import voluptuous as vol
 from homeassistant.config_entries import (
     ConfigFlow,
     ConfigFlowResult,
-    OptionsFlow,
+    OptionsFlowWithReload,
 )
 from homeassistant.core import callback
 from homeassistant.helpers.selector import (
@@ -186,8 +186,12 @@ class EzvizConfigFlow(ConfigFlow, domain=DOMAIN):
         )
 
 
-class EzvizOptionsFlow(OptionsFlow):
-    """Handle integration options (uses the injected self.config_entry)."""
+class EzvizOptionsFlow(OptionsFlowWithReload):
+    """Handle integration options; auto-reloads the entry on option change.
+
+    OptionsFlowWithReload (HA 2025.9+) schedules the reload itself, replacing
+    the deprecated update_listener + async_reload pattern.
+    """
 
     async def async_step_init(
         self, user_input: dict[str, Any] | None = None
