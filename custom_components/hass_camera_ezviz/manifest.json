@@ -9,5 +9,5 @@
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/xyzmos/hass_camera_ezviz/issues",
   "loggers": ["requests", "urllib3"],
-  "version": "2026.10.7"
+  "version": "2026.10.8"
 }
