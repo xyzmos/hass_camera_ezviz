@@ -1,0 +1,115 @@
+{
+  "title": "萤石摄像头-开放平台",
+  "config": {
+    "step": {
+      "user": {
+        "title": "萤石云摄像头",
+        "description": "填写在[萤石开放平台](https://open.ys7.com/console/application.html)创建应用后获得的 appKey / appSecret。",
+        "data": {
+          "appkey": "appKey",
+          "appsecret": "appSecret"
+        }
+      },
+      "reauth_confirm": {
+        "title": "重新认证",
+        "description": "萤石云凭证已失效或变更，请重新输入 appSecret。",
+        "data": {
+          "appsecret": "appSecret"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "连接失败",
+      "invalid_auth": "认证错误",
+      "unknown": "未知错误"
+    },
+    "abort": {
+      "already_configured": "设备已经配置",
+      "reauth_successful": "重新认证成功"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "萤石云选项",
+        "description": "萤石开放平台免费用户 API 每天总数约 10000 次，抓图 1000 次，AI 接口 50-200 次，请合理设置刷新间隔。",
+        "data": {
+          "update_interval_seconds": "刷新间隔时间（3-600 秒）",
+          "update_camera_seconds": "摄像头自动抓图间隔（3-3600 秒）",
+          "deviceserial": "只显示以下设备（序列号），不选则显示所有设备",
+          "switchs": "启用的开关实体（每个实体每次刷新调用一次 API，不启用则不会调用）",
+          "enable_webhook": "启用 Webhook 回调（接收萤石云告警推送）",
+          "webhook_url": "Webhook URL（自动生成，请复制到萤石开放平台消息推送配置）"
+        }
+      }
+    }
+  },
+  "selector": {
+    "switchs": {
+      "options": {
+        "on_off": "开关（隐私遮蔽）",
+        "soundswitch": "麦克风"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "onlinestatus": { "name": "在线状态" },
+      "offlinenotify": { "name": "下线通知" },
+      "wan_ip": { "name": "外网地址" },
+      "alarmstatus": { "name": "布防状态" },
+      "alarm_sound_mod": { "name": "告警声音模式" }
+    },
+    "switch": {
+      "ezviz_onoff": { "name": "摄像头开关" },
+      "ezviz_defence": { "name": "移动侦测" },
+      "ezviz_soundswitch": { "name": "设备麦克风" }
+    },
+    "button": {
+      "stop": { "name": "{channel}停止" },
+      "capture": { "name": "{channel}抓拍" },
+      "up": { "name": "{channel}上" },
+      "down": { "name": "{channel}下" },
+      "left": { "name": "{channel}左" },
+      "right": { "name": "{channel}右" },
+      "upleft": { "name": "{channel}左上" },
+      "downleft": { "name": "{channel}左下" },
+      "upright": { "name": "{channel}右上" },
+      "downright": { "name": "{channel}右下" },
+      "zoombig": { "name": "{channel}放大" },
+      "zoomsmall": { "name": "{channel}缩小" },
+      "zoomnear": { "name": "{channel}近焦距" },
+      "zoomfar": { "name": "{channel}远焦距" },
+      "zoomauto": { "name": "{channel}自动控制" },
+      "vehicleprops": { "name": "{channel}车牌识别" },
+      "humandetect": { "name": "{channel}人形检测" },
+      "humanbody": { "name": "{channel}人体属性识别" },
+      "facedetect": { "name": "{channel}人脸检测" },
+      "liveget": { "name": "{channel}获取直播地址" }
+    },
+    "camera": {
+      "capture": { "name": "{channel}监控画面" },
+      "motion": { "name": "{channel}告警画面" }
+    }
+  },
+  "services": {
+    "capture": {
+      "name": "抓拍",
+      "description": "立即抓拍一张图片并刷新摄像头画面。"
+    },
+    "humandetect": {
+      "name": "人形检测",
+      "description": "对指定图片执行人形检测，返回萤石云端检测结果。",
+      "fields": {
+        "picurl": {
+          "name": "图片地址",
+          "description": "待检测图片的可访问 URL（可先调用抓拍服务获取）。"
+        },
+        "operation": {
+          "name": "检测方式",
+          "description": "number：人数统计；rect：人形框坐标。"
+        }
+      }
+    }
+  }
+}

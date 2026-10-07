@@ -1,0 +1,115 @@
+{
+  "title": "EZVIZ Camera (Open Platform)",
+  "config": {
+    "step": {
+      "user": {
+        "title": "EZVIZ Camera",
+        "description": "Enter the appKey / appSecret of your application created on the [EZVIZ Open Platform](https://open.ys7.com/console/application.html).",
+        "data": {
+          "appkey": "appKey",
+          "appsecret": "appSecret"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate",
+        "description": "The EZVIZ credentials are invalid or changed. Please enter the appSecret again.",
+        "data": {
+          "appsecret": "appSecret"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect",
+      "invalid_auth": "Authentication error",
+      "unknown": "Unknown error"
+    },
+    "abort": {
+      "already_configured": "Device already configured",
+      "reauth_successful": "Re-authentication was successful"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "EZVIZ options",
+        "description": "Free EZVIZ Open Platform accounts are limited to about 10,000 API calls, 1,000 snapshots and 50-200 AI requests per day. Choose reasonable intervals.",
+        "data": {
+          "update_interval_seconds": "Refresh interval (3-600 seconds)",
+          "update_camera_seconds": "Camera snapshot interval (3-3600 seconds)",
+          "deviceserial": "Show only the following devices (serial numbers); leave empty to show all devices",
+          "switchs": "Enabled switch entities (each enabled entity consumes one API call per refresh)",
+          "enable_webhook": "Enable webhook callback (receive EZVIZ cloud alarm pushes)",
+          "webhook_url": "Webhook URL (auto-generated; copy it to the EZVIZ Open Platform message push configuration)"
+        }
+      }
+    }
+  },
+  "selector": {
+    "switchs": {
+      "options": {
+        "on_off": "Privacy switch",
+        "soundswitch": "Microphone"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "onlinestatus": { "name": "Online status" },
+      "offlinenotify": { "name": "Offline notify" },
+      "wan_ip": { "name": "WAN address" },
+      "alarmstatus": { "name": "Defence status" },
+      "alarm_sound_mod": { "name": "Alarm sound mode" }
+    },
+    "switch": {
+      "ezviz_onoff": { "name": "Camera switch" },
+      "ezviz_defence": { "name": "Motion detection" },
+      "ezviz_soundswitch": { "name": "Microphone" }
+    },
+    "button": {
+      "stop": { "name": "{channel}Stop" },
+      "capture": { "name": "{channel}Capture" },
+      "up": { "name": "{channel}Up" },
+      "down": { "name": "{channel}Down" },
+      "left": { "name": "{channel}Left" },
+      "right": { "name": "{channel}Right" },
+      "upleft": { "name": "{channel}Up left" },
+      "downleft": { "name": "{channel}Down left" },
+      "upright": { "name": "{channel}Up right" },
+      "downright": { "name": "{channel}Down right" },
+      "zoombig": { "name": "{channel}Zoom in" },
+      "zoomsmall": { "name": "{channel}Zoom out" },
+      "zoomnear": { "name": "{channel}Focus near" },
+      "zoomfar": { "name": "{channel}Focus far" },
+      "zoomauto": { "name": "{channel}Auto focus" },
+      "vehicleprops": { "name": "{channel}Plate recognition" },
+      "humandetect": { "name": "{channel}Human detection" },
+      "humanbody": { "name": "{channel}Body attributes" },
+      "facedetect": { "name": "{channel}Face detection" },
+      "liveget": { "name": "{channel}Get live address" }
+    },
+    "camera": {
+      "capture": { "name": "{channel}Live image" },
+      "motion": { "name": "{channel}Alarm image" }
+    }
+  },
+  "services": {
+    "capture": {
+      "name": "Capture",
+      "description": "Take a fresh snapshot and refresh the camera image."
+    },
+    "humandetect": {
+      "name": "Human detection",
+      "description": "Run human detection on the given image and return the cloud result.",
+      "fields": {
+        "picurl": {
+          "name": "Image URL",
+          "description": "Accessible URL of the image to analyze (call the capture service first to get one)."
+        },
+        "operation": {
+          "name": "Operation",
+          "description": "number: count people; rect: bounding boxes."
+        }
+      }
+    }
+  }
+}

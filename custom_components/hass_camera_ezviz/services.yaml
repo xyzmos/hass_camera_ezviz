@@ -1,0 +1,26 @@
+capture:
+  target:
+    entity:
+      integration: hass_camera_ezviz
+      domain: camera
+
+humandetect:
+  target:
+    entity:
+      integration: hass_camera_ezviz
+      domain: camera
+  fields:
+    picurl:
+      required: true
+      example: "https://example.com/snapshot.jpg"
+      selector:
+        text:
+    operation:
+      required: false
+      default: "number"
+      example: "number"
+      selector:
+        select:
+          options:
+            - "number"
+            - "rect"

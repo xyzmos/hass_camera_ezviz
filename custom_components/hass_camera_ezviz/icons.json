@@ -1,0 +1,46 @@
+{
+  "entity": {
+    "sensor": {
+      "onlinestatus": { "default": "mdi:check-network-outline" },
+      "offlinenotify": { "default": "mdi:message-alert" },
+      "wan_ip": { "default": "mdi:wan" },
+      "alarmstatus": { "default": "mdi:alarm-light-outline" },
+      "alarm_sound_mod": { "default": "mdi:surround-sound" }
+    },
+    "switch": {
+      "ezviz_onoff": { "default": "mdi:toggle-switch" },
+      "ezviz_defence": { "default": "mdi:alarm-light" },
+      "ezviz_soundswitch": { "default": "mdi:microphone" }
+    },
+    "button": {
+      "stop": { "default": "mdi:stop" },
+      "capture": { "default": "mdi:camera" },
+      "up": { "default": "mdi:arrow-up-thick" },
+      "down": { "default": "mdi:arrow-down-thick" },
+      "left": { "default": "mdi:arrow-left-thick" },
+      "right": { "default": "mdi:arrow-right-thick" },
+      "upleft": { "default": "mdi:arrow-top-left-thick" },
+      "downleft": { "default": "mdi:arrow-bottom-left-thick" },
+      "upright": { "default": "mdi:arrow-top-right-thick" },
+      "downright": { "default": "mdi:arrow-bottom-right-thick" },
+      "zoombig": { "default": "mdi:magnify-plus" },
+      "zoomsmall": { "default": "mdi:magnify-minus" },
+      "zoomnear": { "default": "mdi:magnify-minus-cursor" },
+      "zoomfar": { "default": "mdi:magnify-plus-cursor" },
+      "zoomauto": { "default": "mdi:autorenew" },
+      "vehicleprops": { "default": "mdi:car-search" },
+      "humandetect": { "default": "mdi:human" },
+      "humanbody": { "default": "mdi:human-male-female-child" },
+      "facedetect": { "default": "mdi:face-agent" },
+      "liveget": { "default": "mdi:monitor-eye" }
+    },
+    "camera": {
+      "capture": { "default": "mdi:camera" },
+      "motion": { "default": "mdi:motion-sensor" }
+    }
+  },
+  "services": {
+    "capture": { "service": "mdi:camera" },
+    "humandetect": { "service": "mdi:human" }
+  }
+}
